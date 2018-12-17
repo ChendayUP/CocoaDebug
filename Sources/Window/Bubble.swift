@@ -37,7 +37,8 @@ class Bubble: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 13)
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.text = MemoryHelper.shared().appUsedMemoryAndFreeMemory().components(separatedBy: "  ").first
+        label.text = "网络请求"
+//        MemoryHelper.shared().appUsedMemoryAndFreeMemory().components(separatedBy: "  ").first
         return label
     }()
     
@@ -46,6 +47,7 @@ class Bubble: UIView {
         let sublabel = FPSLabel(frame: CGRect(x:_width/8, y:_height/2 - 16/2 - xxx, width:_width/8*6, height:16))
         
         sublabel.adjustsFontSizeToFitWidth = true //sublabel.sizeToFit()
+        sublabel.isHidden = true
         return sublabel
     }()
     
@@ -233,7 +235,8 @@ class Bubble: UIView {
     
     //MARK: - target action
     @objc func timerMonitor() {
-        _label?.text = MemoryHelper.shared().appUsedMemoryAndFreeMemory().components(separatedBy: "  ").first
+        _label?.text = "网络请求"
+//        MemoryHelper.shared().appUsedMemoryAndFreeMemory().components(separatedBy: "  ").first
     }
     
     @objc func tap() {
